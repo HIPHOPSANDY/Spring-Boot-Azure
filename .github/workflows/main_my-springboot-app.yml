@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: crudapp
-          path: target/*.jar
+          path: '${{ github.workspace }}/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
@@ -57,5 +57,6 @@ jobs:
           app-name: 'my-springboot-app'
           slot-name: 'Production'
           package: java-app/*.jar
+
 
 
